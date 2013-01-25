@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, subtitle: String)(content: Html)
 
 <!DOCTYPE html>
 
@@ -38,11 +38,21 @@
             </div>
         </div>
 
-        @content
+        <header class="jumbotron mastead">
+            <div class="container-fluid">
+                <h1>@title</h1>
+                <p class="lead">@subtitle</p>
+            </div>
+        </header>
 
-        <footer>
-            <p>&copy; Accordo Partners 2013</p>
-        </footer>
+        <div class="container-fluid">
+
+            @content
+
+            <footer>
+                <p>&copy; Accordo Partners 2013</p>
+            </footer>
+        </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="@routes.Assets.at("js/lib/bootstrap.min.js")"></script>
     </body>

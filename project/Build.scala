@@ -8,7 +8,7 @@ object ApplicationBuild extends Build {
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
-      // Add your project dependencies here,
+      "com.google.api-client" % "google-api-client" % "1.13.2-beta"
     )
 
     def customLessEntryPoints(base: File): PathFinder = (
