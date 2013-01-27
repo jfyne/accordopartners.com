@@ -1,35 +1,86 @@
 @(content: Map[String,Seq[String]])
 @main(content("about.title").head, content("about.subtitle").head) {
-    <div class="row-fluid">
+    <div class="row">
 
-        <div class="span3 well">
+        <div class="span3">
             <ul class="nav nav-list">
-                <li class="active"><a href="#about">About</a></li>
-                <li><a href="#partners">Partners</a></li>
-                <li><a href="#rainer">Rainer Giersch</a></li>
-                <li><a href="#rolf">Rolf Fyne</a></li>
+                <li><a href="#about">@content.get("about.about.title").head</a></li>
+                <li><a href="#partners">@content.get("about.partners.title").head</a></li>
+                <li><a href="#rainer">@content.get("about.rainer.title").head</a></li>
+                <li><a href="#rolf">@content.get("about.rolf.title").head</a></li>
             </ul>
         </div>
 
         <div class="span9">
             <section id="about">
                 <div class="page-header">
-                    <h1></h1>
+                    <h1>@content.get("about.about.title").head</h1>
                 </div>
+
+                @content.get("about.about.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+
+                <ul>
+                    @content.get("about.about.list").map { list =>
+                        @list.map { item => <li>@item</li> }
+                    }
+                </ul>
             </section>
+
             <section id="partners">
                 <div class="page-header">
-                    <h1></h1>
+                    <h1>@content.get("about.partners.title").head</h1>
                 </div>
+
+                @content.get("about.partners.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
             </section>
+
             <section id="rainer">
                 <div class="page-header">
-                    <h1></h1>
+                    <h1>@content.get("about.rainer.title").head</h1>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span2">
+                        <img src="http://placehold.it/100x140"/>
+                    </div>
+                    <div class="span10">
+                        @content.get("about.rainer.copy").map { list =>
+                            @list.map { copy => <p>@copy</p> }
+                        }
+                        <p><a href="@content.get("about.rainer.more").head" target="_blank">More...</a></p>
+                        <ul>
+                            @content.get("about.rainer.focus").map { list =>
+                                @list.map { item => <li>@item</li> }
+                            }
+                        </ul>
+                    </div>
                 </div>
             </section>
+
             <section id="rolf">
                 <div class="page-header">
-                    <h1></h1>
+                    <h1>@content.get("about.rolf.title").head</h1>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span2">
+                        <img src="http://placehold.it/100x140"/>
+                    </div>
+                    <div class="span10">
+                        @content.get("about.rolf.copy").map { list =>
+                            @list.map { copy => <p>@copy</p> }
+                        }
+                        <p><a href="@content.get("about.rolf.more").head" target="_blank">More...</a></p>
+                        <ul>
+                            @content.get("about.rolf.focus").map { list =>
+                                @list.map { item => <li>@item</li> }
+                            }
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>

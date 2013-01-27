@@ -11,13 +11,13 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.min.css")" />
         <style type="text/css">body{padding-top:60px;padding-bottom:40px;}.sidebar-nav{padding:9px 0;}</style>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/responsive.min.css")" />
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.min.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body data-spy="scroll" data-target=".nav-list">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -39,14 +39,14 @@
             </div>
         </div>
 
-        <header class="jumbotron mastead">
-            <div class="container-fluid">
+        <header>
+            <div class="container">
                 <h1>@title</h1>
                 <p class="lead">@subtitle</p>
             </div>
         </header>
 
-        <div class="container-fluid">
+        <div class="container">
 
             @content
 

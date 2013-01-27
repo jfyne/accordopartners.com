@@ -28,8 +28,8 @@ object Content {
     def parse(sheet:Response):Map[String,Seq[String]] = {
         var content:scala.collection.mutable.Map[String,Seq[String]] = scala.collection.mutable.Map.empty[String,Seq[String]]
         sheet.body.split("\n").map(line => {
-            val pair = line.split(",")
-            content(pair(0)) = pair.tail
+            val pair = line.split("\t")
+            if (pair.length > 0) content(pair(0)) = pair.tail
         })
         content.toMap
     }
