@@ -1,0 +1,37 @@
+@(content: Map[String,Seq[String]])
+@main(content("about.title").head, content("about.subtitle").head) {
+    <div class="row-fluid">
+
+        <div class="span3 well">
+            <ul class="nav nav-list">
+                <li class="active"><a href="#about">About</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#rainer">Rainer Giersch</a></li>
+                <li><a href="#rolf">Rolf Fyne</a></li>
+            </ul>
+        </div>
+
+        <div class="span9">
+            <section id="about">
+                <div class="page-header">
+                    <h1></h1>
+                </div>
+            </section>
+            <section id="partners">
+                <div class="page-header">
+                    <h1></h1>
+                </div>
+            </section>
+            <section id="rainer">
+                <div class="page-header">
+                    <h1></h1>
+                </div>
+            </section>
+            <section id="rolf">
+                <div class="page-header">
+                    <h1></h1>
+                </div>
+            </section>
+        </div>
+    </div>
+}
