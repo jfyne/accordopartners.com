@@ -1,7 +1,24 @@
 @(content: Map[String,Seq[String]])
 @main(content("home.title").head, content("home.subtitle").head) {
-    <div class="row-fluid">
+    <div class="row">
+        <div class="span6">
+            @content.get("home.left.title").map { copy => <h2>@copy</h2> }
+
+            @content.get("home.left.copy").map { list =>
+                @list.map { copy => <p class="lead">@copy</p> }
+            }
+            <a href="@routes.Application.about" class="btn btn-large btn-primary">More</a>
+        </div>
+
+        <div class="span6">
+        </div>
+    </div>
+
+    <div class="row">
         <div class="span12">
+            <blockquote>
+                @content.get("home.strapline").map { copy => <p><em>@copy</em></p> }
+            </blockquote>
         </div>
     </div>
 }
