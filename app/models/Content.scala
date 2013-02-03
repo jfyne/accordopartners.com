@@ -10,7 +10,6 @@ import play.api.libs.ws.{WS,Response}
 import play.api.libs.concurrent.Promise
 import play.api.Play
 import play.api.Play.{configuration,current}
-import scala.io._
 
 object Content {
 

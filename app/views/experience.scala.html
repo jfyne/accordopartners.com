@@ -3,9 +3,49 @@
     <div class="row">
         <div class="span3">
             <ul class="nav nav-list">
+                <li><a href="#business">@content.get("experience.business.title").head</a></li>
+                <li><a href="#sectors">@content.get("experience.sectors.title").head</a></li>
+                <li><a href="#expos">@content.get("experience.expos.title").head</a></li>
             </ul>
         </div>
         <div class="span9">
+            <section id="business">
+                <div class="page-header">
+                    <h1>@content.get("experience.business.title").get</h1>
+                </div>
+                @content.get("experience.business.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+
+            </section>
+            <section id="sectors">
+                <div class="page-header">
+                    <h1>@content.get("experience.sectors.title").get</h1>
+                </div>
+                @content.get("experience.sectors.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+
+                <ul>
+                    @content.get("experience.sectors.list").map { list =>
+                        @list.map { item => <li>@item</li> }
+                    }
+                </ul>
+            </section>
+            <section id="expos">
+                <div class="page-header">
+                    <h1>@content.get("experience.expos.title").get</h1>
+                </div>
+                @content.get("experience.expos.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+
+                <ul>
+                    @content.get("experience.expos.list").map { list =>
+                        @list.map { item => <li>@item</li> }
+                    }
+                </ul>
+            </section>
         </div>
     </div>
 }

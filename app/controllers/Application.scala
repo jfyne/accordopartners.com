@@ -71,4 +71,28 @@ object Application extends Controller {
             })
         }
     }
+
+    /**
+     * Expo
+     *
+     */
+    def expos(tag:String) = Action {
+        Async {
+            val response = Expos.getContent
+            response.map({ sheet =>
+                var expos = Expos.parse(sheet)
+                if (tag != "Upcoming") expos = expos.filter(e => e.categorySlug == tag)
+                val title = {
+                    if (tag == "Upcoming") {
+                        tag
+                    } else if (expos.length > 0) {
+                        expos(0).categoryName
+                    } else {
+                        "None found"
+                    }
+                }
+                Ok(views.html.expos(title, expos))
+            })
+        }
+    }
 }

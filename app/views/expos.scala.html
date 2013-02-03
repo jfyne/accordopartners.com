@@ -1,0 +1,17 @@
+@(tag:String, expos:Seq[Expo])
+@main("Expos & Conferences", "Accordo Partners") {
+    <div class="row">
+        <section class="span12" id="expos">
+            <div class="page-header">
+                <h1>@tag</h1>
+            </div>
+            @expos.map { expo =>
+                <address class="span3">
+                    <strong><a href="@expo.link">@expo.name</a></strong><br/>
+                    @Expos.humanize(expo.date)<br/>
+                    @expo.categoryName
+                </address>
+            }
+        </section>
+    </div>
+}

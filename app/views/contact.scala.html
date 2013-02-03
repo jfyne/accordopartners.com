@@ -1,12 +1,67 @@
 @(content: Map[String,Seq[String]])
 @main(content("contact.title").head, content("contact.subtitle").head) {
-    <div class="row-fluid">
+    <div class="row">
         <div class="span3">
             <ul class="nav nav-list">
-                <li class="active"><a href="#">Stuff</a></li>
+                <li><a href="#germany">@content.get("contact.germany.title").head</a></li>
+                <li><a href="#uk">@content.get("contact.uk.title").head</a></li>
             </ul>
         </div>
         <div class="span9">
+            <section id="intro">
+                <div class="page-header">
+                    <h1>@content.get("contact.intro.title").get</h1>
+                </div>
+                @content.get("contact.intro.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+            </section>
+            <div class="row">
+                <section id="germany" class="span4">
+                    <div class="page-header">
+                        <h1>@content.get("contact.germany.title").get</h1>
+                    </div>
+                    <address>
+                    @content.get("contact.germany.name").map { list =>
+                        @list.map { copy => <strong>@copy</strong><br/> }
+                    }
+                    @content.get("contact.germany.address").map { list =>
+                        @list.map { copy => @copy<br/> }
+                    }
+                    @content.get("contact.germany.phone").map { list =>
+                        @list.map { copy => <abbr title="Phone">P:</abbr> <a href="tel:@copy">@copy</a><br/> }
+                    }
+                    @content.get("contact.germany.fax").map { list =>
+                        @list.map { copy => <abbr title="Fax">F:</abbr> @copy<br/> }
+                    }
+                    @content.get("contact.germany.email").map { list =>
+                        @list.map { copy => <abbr title="Email">E:</abbr> <a href="mailto:@copy">@copy</a><br/> }
+                    }
+                    </address>
+                </section>
+                <section id="uk" class="span4">
+                    <div class="page-header">
+                        <h1>@content.get("contact.uk.title").get</h1>
+                    </div>
+                    <address>
+                    @content.get("contact.uk.name").map { list =>
+                        @list.map { copy => <strong>@copy</strong><br/> }
+                    }
+                    @content.get("contact.uk.address").map { list =>
+                        @list.map { copy => @copy<br/> }
+                    }
+                    @content.get("contact.uk.phone").map { list =>
+                        @list.map { copy => <abbr title="Phone">P:</abbr> <a href="tel:@copy">@copy</a><br/> }
+                    }
+                    @content.get("contact.uk.mobile").map { list =>
+                        @list.map { copy => <abbr title="Mobile">M:</abbr> <a href="tel:@copy">@copy<br/> }
+                    }
+                    @content.get("contact.uk.email").map { list =>
+                        @list.map { copy => <abbr title="Email">E:</abbr> <a href="mailto:@copy">@copy</a><br/> }
+                    }
+                    </address>
+                </section>
+            </div>
         </div>
     </div>
 }
