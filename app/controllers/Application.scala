@@ -52,9 +52,16 @@ object Application extends Controller {
      */
     def experience = Action {
         Async {
-            val response = Content.getContent
-            response.map({ sheet =>
-                Ok(views.html.experience(Content.parse(sheet)))
+            val expos = Expos.getContent
+            expos.map({ expoSheet =>
+                val allExpos = Expos.parse(expoSheet)
+                val categories = allExpos.groupBy(e => e.categoryName)
+                Async {
+                    val response = Content.getContent
+                    response.map({ sheet =>
+                        Ok(views.html.experience(Content.parse(sheet), categories))
+                    })
+                }
             })
         }
     }
@@ -80,18 +87,19 @@ object Application extends Controller {
         Async {
             val response = Expos.getContent
             response.map({ sheet =>
-                var expos = Expos.parse(sheet)
-                if (tag != "Upcoming") expos = expos.filter(e => e.categorySlug == tag)
+                val allExpos = Expos.parse(sheet)
+                val categories = allExpos.groupBy(e => e.categoryName)
+                val filteredExpos = if (tag != "Upcoming") allExpos.filter(e => e.categorySlug == tag) else allExpos
                 val title = {
                     if (tag == "Upcoming") {
                         tag
-                    } else if (expos.length > 0) {
-                        expos(0).categoryName
+                    } else if (filteredExpos.length > 0) {
+                        filteredExpos(0).categoryName
                     } else {
                         "None found"
                     }
                 }
-                Ok(views.html.expos(title, expos))
+                Ok(views.html.expos(title, categories, filteredExpos))
             })
         }
     }

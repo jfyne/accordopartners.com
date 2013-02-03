@@ -1,4 +1,4 @@
-@(content: Map[String,Seq[String]])
+@(content: Map[String,Seq[String]], categories:Map[String, Seq[Expo]])
 @main(content("experience.title").head, content("experience.subtitle").head) {
     <div class="row">
         <div class="span3">
@@ -41,8 +41,9 @@
                 }
 
                 <ul>
-                    @content.get("experience.expos.list").map { list =>
-                        @list.map { item => <li>@item</li> }
+                    <li><a href="@routes.Application.expos("Upcoming")">All upcoming</a></li>
+                    @categories.map { category =>
+                    <li><a href="@routes.Application.expos(category._2(0).categorySlug)">@category._1</a></li>
                     }
                 </ul>
             </section>
