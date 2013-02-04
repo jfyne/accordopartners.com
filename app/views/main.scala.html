@@ -17,18 +17,18 @@
         <![endif]-->
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="@routes.Application.index">Home</a></li>
-                <li><a href="@routes.Application.about">About</a></li>
-                <li><a href="@routes.Application.solutions">Solutions</a></li>
-                <li><a href="@routes.Application.experience">Experience</a></li>
-                <li><a href="@routes.Application.expos("Upcoming")">Events</a></li>
-                <li><a href="@routes.Application.contact">Contact</a></li>
-            </ul>
-        </nav>
-
         <header>
+            <nav>
+                <ul>
+                    <li><a href="@routes.Application.index">Home</a></li>
+                    <li><a href="@routes.Application.about">About</a></li>
+                    <li><a href="@routes.Application.solutions">Solutions</a></li>
+                    <li><a href="@routes.Application.experience">Experience</a></li>
+                    <li><a href="@routes.Application.expos("Upcoming")">Events</a></li>
+                    <li><a href="@routes.Application.contact">Contact</a></li>
+                </ul>
+            </nav>
+
             <div class="container">
                 <h2>@title</h2>
                 <p class="lead">@subtitle</p>
@@ -39,9 +39,9 @@
 
             @content
 
-            <footer>
-                <p>&copy; Accordo Partners 2013</p>
-            </footer>
         </div>
+        <footer>
+            <p>&copy; Accordo Partners 2013</p>
+        </footer>
     </body>
 </html>

@@ -1,7 +1,33 @@
+/**
+ * Copyright Accordo Partners 2013
+ *
+ * @author Josh Fyne
+ */
+
+@import "_variables.less";
+
 body {
     font-family: 'Roboto', sans-serif;
+    color: @secondary;
 }
 
-h1,h2,h3 {
-    text-transform:uppercase;
+hr {
+    border: 1px solid;
+    margin: 2em;
+}
+
+h1,h2,h3,a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @tertiary;
+}
+
+.btn {
+    background-color: @primary;
+    padding:10px;
+    color: @light;
+}
+
+nav > ul {
+    list-style: none;
 }
