@@ -28,6 +28,18 @@ h1,h2,h3,a {
     color: @light;
 }
 
-nav > ul {
-    list-style: none;
+nav {
+    ul {
+        list-style: none;
+        li {
+            padding: 10px;
+            a {
+                padding: 10px;
+                &:hover {
+                    background-color: @primary;
+                    color: @light;
+                }
+            }
+        }
+    }
 }
