@@ -11,8 +11,6 @@ object ApplicationBuild extends Build {
     )
 
     def customLessEntryPoints(base: File): PathFinder = (
-        (base / "app" / "assets" / "stylesheets" / "bootstrap" * "bootstrap.less") +++
-        (base / "app" / "assets" / "stylesheets" / "bootstrap" * "responsive.less") +++ 
         (base / "app" / "assets" / "stylesheets" * "*.less")
     )
 

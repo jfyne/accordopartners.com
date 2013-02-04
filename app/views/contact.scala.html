@@ -10,7 +10,7 @@
         <div class="span9">
             <section id="intro">
                 <div class="page-header">
-                    <h1>@content.get("contact.intro.title").get</h1>
+                    <h2>@content.get("contact.intro.title").get</h2>
                 </div>
                 @content.get("contact.intro.copy").map { list =>
                     @list.map { copy => <p>@copy</p> }
@@ -19,7 +19,7 @@
             <div class="row">
                 <section id="germany" class="span4">
                     <div class="page-header">
-                        <h1>@content.get("contact.germany.title").get</h1>
+                        <h2>@content.get("contact.germany.title").get</h2>
                     </div>
                     <address>
                     @content.get("contact.germany.name").map { list =>
@@ -41,7 +41,7 @@
                 </section>
                 <section id="uk" class="span4">
                     <div class="page-header">
-                        <h1>@content.get("contact.uk.title").get</h1>
+                        <h2>@content.get("contact.uk.title").get</h2>
                     </div>
                     <address>
                     @content.get("contact.uk.name").map { list =>

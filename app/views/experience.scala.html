@@ -11,7 +11,7 @@
         <div class="span9">
             <section id="business">
                 <div class="page-header">
-                    <h1>@content.get("experience.business.title").get</h1>
+                    <h2>@content.get("experience.business.title").get</h2>
                 </div>
                 @content.get("experience.business.copy").map { list =>
                     @list.map { copy => <p>@copy</p> }
@@ -20,7 +20,7 @@
             </section>
             <section id="sectors">
                 <div class="page-header">
-                    <h1>@content.get("experience.sectors.title").get</h1>
+                    <h2>@content.get("experience.sectors.title").get</h2>
                 </div>
                 @content.get("experience.sectors.copy").map { list =>
                     @list.map { copy => <p>@copy</p> }
@@ -34,7 +34,7 @@
             </section>
             <section id="expos">
                 <div class="page-header">
-                    <h1>@content.get("experience.expos.title").get</h1>
+                    <h2>@content.get("experience.expos.title").get</h2>
                 </div>
                 @content.get("experience.expos.copy").map { list =>
                     @list.map { copy => <p>@copy</p> }
