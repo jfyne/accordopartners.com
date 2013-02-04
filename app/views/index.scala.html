@@ -1,6 +1,6 @@
 @(content: Map[String,Seq[String]])
 @main(content("home.title").head, content("home.subtitle").head) {
-    <div class="row">
+    <div class="row-fluid">
         <div class="span6">
             @content.get("home.left.title").map { copy => <h2>@copy</h2> }
 
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row-fluid">
         <div class="span12">
             <hr>
             <blockquote>

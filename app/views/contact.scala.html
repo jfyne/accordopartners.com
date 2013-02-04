@@ -1,11 +1,13 @@
 @(content: Map[String,Seq[String]])
 @main(content("contact.title").head, content("contact.subtitle").head) {
-    <div class="row">
+    <div class="row-fluid">
         <div class="span3">
-            <ul class="nav nav-list">
-                <li><a href="#germany">@content.get("contact.germany.title").head</a></li>
-                <li><a href="#uk">@content.get("contact.uk.title").head</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="#germany">@content.get("contact.germany.title").head</a></li>
+                    <li><a href="#uk">@content.get("contact.uk.title").head</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="span9">
             <section id="intro">
@@ -16,7 +18,7 @@
                     @list.map { copy => <p>@copy</p> }
                 }
             </section>
-            <div class="row">
+            <div class="row-fluid">
                 <section id="germany" class="span4">
                     <div class="page-header">
                         <h2>@content.get("contact.germany.title").get</h2>

@@ -1,14 +1,16 @@
 @(content: Map[String,Seq[String]])
 @main(content("solutions.title").head, content("solutions.subtitle").head) {
-    <div class="row">
+    <div class="row-fluid">
         <div class="span3">
-            <ul class="nav nav-list">
-                <li><a href="#programs">@content.get("solutions.programs.title").head</a></li>
-                <li><a href="#market-entry">@content.get("solutions.market.title").head</a></li>
-                <li><a href="#innovation-partnering">@content.get("solutions.innovation.title").head</a></li>
-                <li><a href="#fdi">@content.get("solutions.fdi.title").head</a></li>
-                <li><a href="#finance">@content.get("solutions.finance.title").head</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="#programs">@content.get("solutions.programs.title").head</a></li>
+                    <li><a href="#market-entry">@content.get("solutions.market.title").head</a></li>
+                    <li><a href="#innovation-partnering">@content.get("solutions.innovation.title").head</a></li>
+                    <li><a href="#fdi">@content.get("solutions.fdi.title").head</a></li>
+                    <li><a href="#finance">@content.get("solutions.finance.title").head</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="span9">
