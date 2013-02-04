@@ -10,12 +10,7 @@ object ApplicationBuild extends Build {
     val appDependencies = Seq(
     )
 
-    def customLessEntryPoints(base: File): PathFinder = (
-        (base / "app" / "assets" / "stylesheets" * "*.less")
-    )
-
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      lessEntryPoints <<= baseDirectory(customLessEntryPoints)
     )
 
 }
