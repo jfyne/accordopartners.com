@@ -5,6 +5,8 @@
  */
 
 @import "_variables.less";
+@import "_header.less";
+@import "_footer.less";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -26,20 +28,4 @@ h1,h2,h3,a {
     background-color: @primary;
     padding:10px;
     color: @light;
-}
-
-nav {
-    ul {
-        list-style: none;
-        li {
-            padding: 10px;
-            a {
-                padding: 10px;
-                &:hover {
-                    background-color: @primary;
-                    color: @light;
-                }
-            }
-        }
-    }
 }

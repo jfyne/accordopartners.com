@@ -1,0 +1,39 @@
+header {
+    display: block;
+    position: relative;
+    width: 100%;
+    clear: both;
+
+    div {
+        float:left;
+        width: 50%;
+        margin-top: -25px;
+        img {
+            min-height: 100px;
+            max-height: 200px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        height: 100px;
+        float: right;
+        padding: 0;
+
+        li {
+            float: left;
+            margin-left: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        div {
+            width: 100%;
+            margin-top: -25px;
+        }
+
+        ul {
+            width:100%;
+        }
+    }
+}
