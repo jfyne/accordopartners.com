@@ -1,0 +1,36 @@
+nav.side {
+    ul {
+        font-size: 14px;
+        list-style: none;
+        padding: 0;
+        li {
+            margin-top: 20px;
+            a {
+                text-transform: uppercase;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            li {
+                float: left;
+                margin-top: 0;
+                white-space: nowrap;
+                margin-bottom: 20px;
+                a {
+                    padding: 10px;
+                    background: @secondary;
+                    color: @light;
+                    &:hover {
+                        background: @primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        clear: both;
+    }
+}

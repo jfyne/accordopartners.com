@@ -1,16 +1,21 @@
 @(content: Map[String,Seq[String]])
-@main(content("contact.title").head, content("contact.subtitle").head) {
+@main(content("contact.title").head) {
     <div class="row-fluid">
-        <div class="span3">
-            <nav>
+        <div class="span2">
+            <nav class="side">
                 <ul>
                     <li><a href="#germany">@content.get("contact.germany.title").head</a></li>
                     <li><a href="#uk">@content.get("contact.uk.title").head</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="span9">
+        <div class="span10 content">
             <section id="intro">
+                <section class="page-header">
+                    <h1>@content.get("contact.title").head</h1>
+                    <p class="lead">@content.get("contact.subtitle").head</p>
+                </section>
+
                 <div class="page-header">
                     <h2>@content.get("contact.intro.title").get</h2>
                 </div>
@@ -19,7 +24,8 @@
                 }
             </section>
             <div class="row-fluid">
-                <section id="germany" class="span4">
+
+                <section id="germany" class="span5">
                     <div class="page-header">
                         <h2>@content.get("contact.germany.title").get</h2>
                     </div>
@@ -41,7 +47,7 @@
                     }
                     </address>
                 </section>
-                <section id="uk" class="span4">
+                <section id="uk" class="span5">
                     <div class="page-header">
                         <h2>@content.get("contact.uk.title").get</h2>
                     </div>

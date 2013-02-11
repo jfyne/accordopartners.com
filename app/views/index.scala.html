@@ -1,6 +1,13 @@
 @(content: Map[String,Seq[String]])
-@main(content("home.title").head, content("home.subtitle").head) {
+@main(content("home.title").head) {
     <div class="row-fluid">
+        <section class="page-header span12">
+            <h1>@content.get("home.title").head</h1>
+            <p class="lead">@content.get("home.subtitle").head</p>
+        </section>
+    </div>
+
+    <div class="row-fluid content">
         <div class="span6">
             @content.get("home.left.title").map { copy => <h2>@copy</h2> }
 

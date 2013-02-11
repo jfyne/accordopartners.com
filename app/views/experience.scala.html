@@ -1,8 +1,8 @@
 @(content: Map[String,Seq[String]], categories:Map[String, Seq[Expo]])
-@main(content("experience.title").head, content("experience.subtitle").head) {
+@main(content("experience.title").head) {
     <div class="row-fluid">
-        <div class="span3">
-            <nav>
+        <div class="span2">
+            <nav class="side">
                 <ul>
                     <li><a href="#business">@content.get("experience.business.title").head</a></li>
                     <li><a href="#sectors">@content.get("experience.sectors.title").head</a></li>
@@ -10,7 +10,12 @@
                 </ul>
             </nav>
         </div>
-        <div class="span9">
+        <div class="span10 content">
+            <section class="page-header">
+                <h1>@content.get("experience.title").head</h1>
+                <p class="lead">@content.get("experience.subtitle").head</p>
+            </section>
+
             <section id="business">
                 <div class="page-header">
                     <h2>@content.get("experience.business.title").get</h2>

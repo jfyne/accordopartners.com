@@ -6,16 +6,33 @@
 
 @import "_variables.less";
 @import "_header.less";
+@import "_side.less";
 @import "_footer.less";
 
 body {
     font-family: 'Roboto', sans-serif;
     color: @primary;
+    background-image: url('/assets/img/corner.jpg?v=2');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 40% auto;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: @primary;
+        background-image: none;
+    }
 }
 
 hr {
     border: 1px solid;
     margin: 2em;
+}
+
+h1 {
+    font-size: 36px;
 }
 
 h1,h2,h3 {
@@ -34,6 +51,11 @@ a {
     background-color: @primary;
     padding:10px;
     color: @light;
+    text-transform: uppercase;
+    &:hover {
+        background-color: @secondary;
+        color: @light;
+    }
 }
 
 #content {

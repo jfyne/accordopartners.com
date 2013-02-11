@@ -1,8 +1,8 @@
 @(content: Map[String,Seq[String]])
-@main(content("solutions.title").head, content("solutions.subtitle").head) {
+@main(content("solutions.title").head) {
     <div class="row-fluid">
-        <div class="span3">
-            <nav>
+        <div class="span2">
+            <nav class="side">
                 <ul>
                     <li><a href="#programs">@content.get("solutions.programs.title").head</a></li>
                     <li><a href="#market-entry">@content.get("solutions.market.title").head</a></li>
@@ -13,7 +13,12 @@
             </nav>
         </div>
 
-        <div class="span9">
+        <div class="span10 content">
+            <section class="page-header">
+                <h1>@content.get("solutions.title").head</h1>
+                <p class="lead">@content.get("solutions.subtitle").head</p>
+            </section>
+
             <section id="programs">
                 <div class="page-header">
                     <h2>@content.get("solutions.programs.title").head</h2>

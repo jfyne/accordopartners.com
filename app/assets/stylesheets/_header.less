@@ -1,44 +1,53 @@
 header {
     display: block;
+    padding-left: 20px;
     position: relative;
-    width: 100%;
     clear: both;
 
     div {
-        float:left;
-        width: 40%;
-        margin-top: -25px;
         img {
-            min-height: 100px;
+            margin-left: -54px;
             max-height: 200px;
         }
     }
 
-    div#title {
-        width:100%;
-        clear:both;
-    }
-
     ul {
         list-style: none;
-        height: 100px;
-        width: 50%;
-        float: right;
         padding: 0;
         li {
             float: left;
-            margin-left: 10px;
+            margin-bottom:20px;
+            a {
+                background-color: @primary;
+                padding:10px;
+                color: @light;
+                text-transform: uppercase;
+                &:hover {
+                    background-color: @secondary;
+                    color: @light;
+                }
+            }
         }
     }
 
     @media only screen and (max-width: 768px) {
         div {
             width: 100%;
-            margin-top: -25px;
+
+            img {
+                margin-left: 0;
+                width: 100%;
+            }
         }
 
         ul {
             width:100%;
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding-left: 0;
     }
 }
