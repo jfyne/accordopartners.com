@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: @secondary;
+    color: @primary;
 }
 
 hr {
@@ -18,14 +18,24 @@ hr {
     margin: 2em;
 }
 
-h1,h2,h3,a {
+h1,h2,h3 {
+    font-family: 'Exo', sans-serif;
+    font-weight: normal;
     text-transform: uppercase;
-    text-decoration: none;
     color: @tertiary;
+}
+
+a {
+    color: @secondary;
+    text-decoration: none;
 }
 
 .btn {
     background-color: @primary;
     padding:10px;
     color: @light;
+}
+
+#content {
+    clear: both;
 }
