@@ -1,0 +1,28 @@
+#expos {
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            float: left;
+            padding-right: 20px;
+            address {
+                padding: 20px;
+                background: @light;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            li {
+                float: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+#sectors {
+    clear: both;
+}
