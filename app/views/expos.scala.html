@@ -1,37 +1,40 @@
 @(tag:String, categories:Map[String,Seq[Expo]], filteredExpos:Seq[Expo])
 @main("Expos & conferences") {
     <div class="row-fluid">
-        <section class="page-header">
-            <h1>Expos & conferences</h1>
-            <p class="lead"></p>
-        </section>
 
-        <section class="span12" id="expos">
-            <div class="page-header">
-                <h2>@tag</h2>
-            </div>
-            <ul>
-            @filteredExpos.map { expo =>
-                <li>
-                    <address>
-                        <strong><a href="@expo.link" target="_blank">@expo.name</a></strong><br/>
-                        @Expos.humanize(expo.date)<br/>
-                        @expo.categoryName
-                    </address>
-                </li>
-            }
-            </ul>
-        </section>
-        <section class="span12" id="sectors">
-            <div class="page-header">
-                <h2>Sectors</h2>
-            </div>
-            <ul>
-                <li><a href="@routes.Application.expos("Upcoming")">All upcoming</a></li>
-                @categories.map { category =>
-                <li><a href="@routes.Application.expos(category._2(0).categorySlug)">@category._1</a></li>
+        <div class="span2">
+            <nav class="side">
+                <ul>
+                    <li><a href="@routes.Application.expos("Upcoming")">All upcoming</a></li>
+                    @categories.map { category =>
+                    <li><a href="@routes.Application.expos(category._2(0).categorySlug)">@category._1</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+
+        <div class="span10 content">
+            <section class="page-header">
+                <h1>Expos & conferences</h1>
+                <p class="lead"></p>
+            </section>
+
+            <section id="expos">
+                <div class="page-header">
+                    <h2>@tag</h2>
+                </div>
+                <ul>
+                @filteredExpos.map { expo =>
+                    <li>
+                        <address>
+                            <strong><a href="@expo.link" target="_blank">@expo.name</a></strong><br/>
+                            @Expos.humanize(expo.date)<br/>
+                            @expo.categoryName
+                        </address>
+                    </li>
                 }
-            </ul>
-        </section>
+                </ul>
+            </section>
+        </div>
     </div>
 }
