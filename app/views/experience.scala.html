@@ -3,10 +3,10 @@
     <div class="row-fluid">
         <div class="span2">
             <nav class="side">
-                <ul>
+                <ul data-spy="affix" data-offset-top="240">
                     <li><a href="#business">@content.get("experience.business.title").head</a></li>
-                    <li><a href="#sectors">@content.get("experience.sectors.title").head</a></li>
-                    <li><a href="#expos">@content.get("experience.expos.title").head</a></li>
+                    <li><a href="#technology">@content.get("experience.sectors.title").head</a></li>
+                    <li><a href="#conferences">@content.get("experience.expos.title").head</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,7 +25,7 @@
                 }
 
             </section>
-            <section id="sectors">
+            <section id="technology">
                 <div class="page-header">
                     <h2>@content.get("experience.sectors.title").get</h2>
                 </div>
@@ -39,7 +39,7 @@
                     }
                 </ul>
             </section>
-            <section id="expos">
+            <section id="conferences">
                 <div class="page-header">
                     <h2>@content.get("experience.expos.title").get</h2>
                 </div>

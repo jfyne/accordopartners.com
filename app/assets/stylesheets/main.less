@@ -7,6 +7,7 @@
 @import "_variables.less";
 @import "_header.less";
 @import "_side.less";
+@import "_index.less";
 @import "_events.less";
 @import "_footer.less";
 
@@ -48,9 +49,21 @@ a {
     text-decoration: none;
 }
 
+section, .card {
+    position: relative;
+    padding:20px;
+    background: @light;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+
 .btn {
-    background-color: @primary;
+    background-color: @tertiary;
     padding:10px;
+    margin: 5px;
     color: @light;
     text-transform: uppercase;
     &:hover {

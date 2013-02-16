@@ -8,40 +8,48 @@
     </div>
 
     <div class="row-fluid content">
-        <div class="span6">
+        <section class="span6">
             @content.get("home.left.title").map { copy => <h2>@copy</h2> }
 
             @content.get("home.left.copy").map { list =>
                 @list.map { copy => <p class="lead">@copy</p> }
             }
-            <a href="@routes.Application.about" class="btn btn-large btn-primary">More</a>
-        </div>
 
-        <div class="span6">
+            <div class="cta">
+                <a href="@routes.Application.about" class="btn btn-large btn-primary">More</a>
+            </div>
+        </section>
+
+        <section class="span6">
             @content.get("home.right.meet.title").map { copy => <h2>@copy</h2> }
 
             @content.get("home.right.meet.copy").map { list =>
                 @list.map { copy => <p class="lead">@copy</p> }
             }
 
-            <a href="@routes.Application.expos("Upcoming")" class="btn btn-large btn-primary">Expos &amp; Conferences</a>
+            <div class="cta">
+                <a href="@routes.Application.expos("Upcoming")" class="btn btn-large btn-primary">Expos &amp; Conferences</a>
+            </div>
+        </section>
 
+        <section class="span6">
             @content.get("home.right.contact.title").map { copy => <h2>@copy</h2> }
 
             @content.get("home.right.contact.copy").map { list =>
                 @list.map { copy => <p class="lead">@copy</p> }
             }
 
-            <a href="@routes.Application.contact" class="btn btn-large btn-primary">Contact us</a>
-        </div>
+            <div class="cta">
+                <a href="@routes.Application.contact" class="btn btn-large btn-primary">Contact us</a>
+            </div>
+        </section>
     </div>
 
     <div class="row-fluid">
-        <div class="span12">
-            <hr>
+        <section class="span12">
             <blockquote>
                 @content.get("home.strapline").map { copy => <p><em>@copy</em></p> }
             </blockquote>
-        </div>
+        </section>
     </div>
 }

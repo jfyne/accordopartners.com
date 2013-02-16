@@ -11,7 +11,7 @@
         <link href='http://fonts.googleapis.com/css?family=Exo:200' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/bootstrap.min.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.min.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("img/favicon16.png")">
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -32,13 +32,17 @@
             </nav>
         </header>
 
-        <div class="container-fluid" id="content">
+        <div data-spy="scroll" data-target=".spy" class="container-fluid" id="content">
 
             @content
 
         </div>
         <footer>
             <p>&copy; Accordo Partners 2013</p>
+            <div class="top" data-spy="affix" data-offset-top="240"><a href="#">Top</a></div>
         </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
     </body>
 </html>

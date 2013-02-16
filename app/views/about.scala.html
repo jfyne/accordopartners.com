@@ -4,7 +4,7 @@
 
         <div class="span2">
             <nav class="side">
-                <ul>
+                <ul data-spy="affix" data-offset-top="240" class="spy">
                     <li><a href="#about">@content.get("about.about.title").head</a></li>
                     <li><a href="#partners">@content.get("about.partners.title").head</a></li>
                     <li><a href="#rainer">@content.get("about.rainer.title").head</a></li>
@@ -34,8 +34,11 @@
                     }
                 </ul>
 
-                <a href="@routes.Application.solutions" class="btn btn-large btn-primary">Solutions</a>
-                <a href="@routes.Application.experience" class="btn btn-large btn-primary">Experience</a>
+                <br>
+                <p>
+                    <a href="@routes.Application.solutions" class="btn btn-large btn-primary">Solutions</a>
+                    <a href="@routes.Application.experience" class="btn btn-large btn-primary">Experience</a>
+                </p>
             </section>
 
             <section id="partners">
@@ -55,7 +58,7 @@
 
                 <div class="row-fluid">
                     <div class="span2">
-                        <img src="http://placehold.it/100x140"/>
+                        <img src="@routes.Assets.at("img/Reiner-Giersch.jpg")"/>
                     </div>
                     <div class="span10">
                         @content.get("about.rainer.copy").map { list =>
@@ -78,7 +81,7 @@
 
                 <div class="row-fluid">
                     <div class="span2">
-                        <img src="http://placehold.it/100x140"/>
+                        <img src="@routes.Assets.at("img/Rolf-Fyne.jpg")"/>
                     </div>
                     <div class="span10">
                         @content.get("about.rolf.copy").map { list =>

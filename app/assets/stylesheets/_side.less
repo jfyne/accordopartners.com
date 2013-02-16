@@ -22,13 +22,18 @@ nav.side {
                 margin-bottom: 20px;
                 a {
                     padding: 10px;
-                    background: @secondary;
+                    background: @tertiary;
                     color: @light;
                     &:hover {
-                        background: @primary;
+                        background: @secondary;
                     }
                 }
             }
+        }
+        &.affix {
+            position: fixed;
+            top: 5px;
+            width: 12%;
         }
     }
 }
@@ -36,5 +41,12 @@ nav.side {
 @media only screen and (max-width: 768px) {
     .content {
         clear: both;
+    }
+
+    nav.side {
+        ul.affix {
+            position: relative;
+            width: 100%;
+        }
     }
 }
