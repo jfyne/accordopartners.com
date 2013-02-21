@@ -1,0 +1,12 @@
+@(content: Map[String,Seq[String]])
+@main(content("terms.title").head) {
+    <div class="row-fluid">
+        <section class="span12">
+            @content.get("terms.title").map { copy => <h2>@copy</h2> }
+
+            @content.get("terms.copy").map { list =>
+                @list.map { copy => <p>@copy</p> }
+            }
+        </section>
+    </div>
+}

@@ -8,8 +8,9 @@ GET     /about                      controllers.Application.about
 GET     /solutions                  controllers.Application.solutions
 GET     /experience                 controllers.Application.experience
 GET     /contact                    controllers.Application.contact
-GET	/expos		            controllers.Application.expos(tag="Upcoming")
-GET	/expos/:tag		    controllers.Application.expos(tag:String)
+GET     /expos                      controllers.Application.expos(tag="Upcoming")
+GET     /expos/:tag                 controllers.Application.expos(tag:String)
+GET     /terms-and-conditions       controllers.Application.terms
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

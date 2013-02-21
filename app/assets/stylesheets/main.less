@@ -11,13 +11,19 @@
 @import "_events.less";
 @import "_footer.less";
 
+html {
+    height: 100%;
+    overflow: auto;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: @primary;
     background-image: url('/assets/img/corner.png');
     background-repeat: no-repeat;
     background-position: right top;
-    background-size: 40% auto;
+    background-size: 30% auto;
+    height: 100%;
 }
 
 @media only screen and (max-width: 768px) {

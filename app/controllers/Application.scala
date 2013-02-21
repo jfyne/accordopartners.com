@@ -117,4 +117,19 @@ object Application extends Controller {
             }
         }
     }
+
+    /**
+     * Terms and conditions
+     *
+     */
+    def terms = Cached("acc.terms", 86400) {
+        Action {
+            Async {
+                val response = Content.getContent
+                response.map({ sheet =>
+                    Ok(views.html.terms(Content.parse(sheet)))
+                })
+            }
+        }
+    }
 }

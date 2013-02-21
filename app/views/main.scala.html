@@ -38,10 +38,25 @@
         </div>
         <footer>
             <p>&copy; Accordo Partners 2013</p>
+            <p><a href="@routes.Application.terms">Terms &amp; conditions</a></p>
             <div class="top" data-spy="affix" data-offset-top="240"><a href="#">Top</a></div>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+        <script>
+            // Fix for webkit position fixed bug
+            var es = document.getElementsByTagName('a');
+            for(var i = 1; i < es.length; i++) {
+                es[i].onclick = function() {
+                    var h = this.hash.substr(1);
+                    var e = document.getElementById(h);
+                    var eT = (e == null) ? 0 : e.offsetTop;
+                    window.scrollTo(0, eT);
+                    window.location.hash = '';
+                    return false;
+                }
+            }
+        </script>
     </body>
 </html>
