@@ -48,13 +48,16 @@
             // Fix for webkit position fixed bug
             var es = document.getElementsByTagName('a');
             for(var i = 1; i < es.length; i++) {
-                es[i].onclick = function() {
-                    var h = this.hash.substr(1);
-                    var e = document.getElementById(h);
-                    var eT = (e == null) ? 0 : e.offsetTop;
-                    window.scrollTo(0, eT);
-                    window.location.hash = '';
-                    return false;
+                var href = es[i].getAttribute('href');
+                if (href.indexOf('#') != -1) {
+                    es[i].onclick = function() {
+                        var h = this.hash.substr(1);
+                        var e = document.getElementById(h);
+                        var eT = (e == null) ? 0 : e.offsetTop;
+                        window.scrollTo(0, eT);
+                        window.location.hash = this.getAttribute('href');
+                        return false;
+                    }
                 }
             }
         </script>
