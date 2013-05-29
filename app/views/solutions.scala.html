@@ -8,7 +8,9 @@
                     <li><a href="#market-entry">@content.get("solutions.market.title").head</a></li>
                     <li><a href="#innovation-partnering">@content.get("solutions.innovation.title").head</a></li>
                     <li><a href="#fdi">@content.get("solutions.fdi.title").head</a></li>
+                    <li><a href="#offset">@content.get("solutions.offset.title").head</a></li>
                     <li><a href="#finance">@content.get("solutions.finance.title").head</a></li>
+                    <li><a class="top" href="#">Top</a></li>
                 </ul>
             </nav>
         </div>
@@ -95,6 +97,23 @@
                         @list.map { item => <li>@item</li> }
                     }
                 </ul>
+            </section>
+
+            <section id="offset">
+                <div class="page-header">
+                    <h2>@content.get("solutions.offset.title").head</h2>
+                </div>
+
+                @content.get("solutions.offset.copy").map { list =>
+                    @list.map { copy => <p>@copy</p> }
+                }
+
+                <ul>
+                    @content.get("solutions.offset.list").map { list =>
+                        @list.map { item => <li>@item</li> }
+                    }
+                </ul>
+
             </section>
 
             <section id="finance">
