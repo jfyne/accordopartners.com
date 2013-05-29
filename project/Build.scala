@@ -1,16 +1,16 @@
 import sbt._
 import Keys._
-import PlayProject._
+import play.Project._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "accordopartners.com"
+    val appName         = "accordopartners"
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
     )
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
+    val main = play.Project(appName, appVersion, appDependencies).settings(
     )
 
 }

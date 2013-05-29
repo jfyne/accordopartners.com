@@ -4,6 +4,7 @@ import play.api._
 import play.api.mvc._
 import play.api.cache.Cached
 import play.api.Play.current
+import play.api.libs.concurrent.Execution.Implicits._
 
 import models._
 
