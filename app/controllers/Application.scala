@@ -78,6 +78,21 @@ object Application extends Controller {
     }
 
     /**
+     * Partners
+     *
+     */
+    def partners = Cached("acc.partners", 86400) {
+        Action {
+            Async {
+                var response = Partner.getContent
+                response.map({ sheet =>
+                    Ok(views.html.partners(Partner.parse(sheet)))
+                })
+            }
+        }
+    }
+
+    /**
      * Contact
      *
      */

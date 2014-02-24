@@ -22,7 +22,7 @@ object Expos {
      *
      */
     def getContent = WS.url(Play.configuration.getString("application.expos").get).get()
-    
+
     /**
      * Parse sheet
      *
