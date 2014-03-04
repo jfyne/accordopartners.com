@@ -23,7 +23,14 @@
                     <li id="partner-@partner.name">
                         <div class="card">
                             <h2>@partner.name</h2>
-                            <a target="_blank" href="@partner.link"><img src="@partner.logo"></a>
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <a target="_blank" href="@partner.link"><img src="@partner.logo"></a>
+                                </div>
+                                <div class="span10">
+                                    <p>@partner.description</p>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 }
