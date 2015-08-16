@@ -52,3 +52,15 @@ func About(w http.ResponseWriter, r *http.Request) {
 func Contact(w http.ResponseWriter, r *http.Request) {
 	common(w, "contact")
 }
+
+func Experience(w http.ResponseWriter, r *http.Request) {
+	common(w, "experience")
+}
+
+func Solutions(w http.ResponseWriter, r *http.Request) {
+	common(w, "solutions")
+}
+
+func Terms(w http.ResponseWriter, r *http.Request) {
+	common(w, "terms")
+}
