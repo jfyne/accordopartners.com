@@ -1,0 +1,130 @@
+{{ $aboutTitle := get "about.title" .Data }}
+{{ $aboutSubtitle := get "about.subtitle" .Data }}
+{{ $aboutAboutTitle := get "about.about.title" .Data }}
+{{ $aboutAboutCopy := get "about.about.copy" .Data }}
+{{ $aboutAboutList := get "about.about.list" .Data }}
+{{ $aboutPartnersTitle := get "about.partners.title" .Data }}
+{{ $aboutPartnersCopy := get "about.partners.copy" .Data }}
+{{ $aboutRainerTitle := get "about.rainer.title" .Data }}
+{{ $aboutRainerCopy := get "about.rainer.copy" .Data }}
+{{ $aboutRainerMore := get "about.rainer.more" .Data }}
+{{ $aboutRainerFocus := get "about.rainer.focus" .Data }}
+{{ $aboutRolfTitle := get "about.rolf.title" .Data }}
+{{ $aboutRolfCopy := get "about.rolf.copy" .Data }}
+{{ $aboutRolfMore := get "about.rolf.more" .Data }}
+{{ $aboutRolfFocus := get "about.rolf.focus" .Data }}
+<div class="row-fluid">
+
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240" class="spy">
+                <li><a href="#about">{{ index $aboutAboutTitle 1 }}</a></li>
+                <li><a href="#partners">{{ index $aboutPartnersTitle 1 }}</a></li>
+                <li><a href="#rainer">{{ index $aboutRainerTitle 1 }}</a></li>
+                <li><a href="#rolf">{{ index $aboutRolfTitle 1 }}</a></li>
+                <li><a class="top" href="#">Top</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="span10 content">
+        <section class="page-header">
+            <h1>{{ index $aboutTitle 1 }}</h1>
+            <p class="lead">{{ index $aboutSubtitle 1 }}</p>
+        </section>
+
+        <section id="about">
+            <div class="page-header">
+                <h2>{{ index $aboutAboutTitle 1 }}</h2>
+            </div>
+
+            {{ range $index, $copy := $aboutAboutCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $aboutAboutList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+
+            <br>
+            <p>
+                <a href="/solutions" class="btn btn-large btn-primary">Solutions</a>
+                <a href="/experience" class="btn btn-large btn-primary">Experience</a>
+            </p>
+        </section>
+
+        <section id="partners">
+            <div class="page-header">
+                <h2>{{ index $aboutPartnersTitle 1 }}</h2>
+            </div>
+
+            {{ range $index, $copy := $aboutPartnersCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+        </section>
+
+        <section id="rainer">
+            <div class="page-header">
+                <h2>{{ index $aboutRainerTitle 1 }}</h2>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span2">
+                    <img src="/img/Reiner-Giersch.jpg"/>
+                </div>
+                <div class="span10">
+                    {{ range $index, $copy := $aboutRainerCopy }}
+                        {{ if and $index $copy }}
+                        <p>{{ $copy }}</p>
+                        {{end}}
+                    {{ end }}
+                    <p><a href="{{ index $aboutRainerMore 1 }}" target="_blank">More...</a></p>
+                    <p>Current focus:</p>
+                    <ul>
+                        {{ range $index, $copy := $aboutRainerFocus }}
+                            {{ if and $index $copy }}
+                            <li>{{ $copy }}</li>
+                            {{end}}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="rolf">
+            <div class="page-header">
+                <h2>{{ index $aboutRolfTitle 1 }}</h2>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span2">
+                    <img src="/img/Rolf-Fyne.jpg"/>
+                </div>
+                <div class="span10">
+                    {{ range $index, $copy := $aboutRolfCopy }}
+                        {{ if and $index $copy }}
+                        <p>{{ $copy }}</p>
+                        {{end}}
+                    {{ end }}
+                    <p><a href="{{ index $aboutRolfMore 1 }}" target="_blank">More...</a></p>
+                    <p>Current focus:</p>
+                    <ul>
+                        {{ range $index, $copy := $aboutRolfFocus }}
+                            {{ if and $index $copy }}
+                            <li>{{ $copy }}</li>
+                            {{end}}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

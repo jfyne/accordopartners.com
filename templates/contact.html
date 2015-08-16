@@ -1,0 +1,114 @@
+{{ $contactTitle := get "contact.title" .Data }}
+{{ $contactSubtitle := get "contact.subtitle" .Data }}
+{{ $contactGermanyTitle := get "contact.germany.title" .Data }}
+{{ $contactGermanyName := get "contact.germany.name" .Data }}
+{{ $contactGermanyAddress := get "contact.germany.address" .Data }}
+{{ $contactGermanyPhone := get "contact.germany.phone" .Data }}
+{{ $contactGermanyFax := get "contact.germany.fax" .Data }}
+{{ $contactGermanyEmail := get "contact.germany.email" .Data }}
+{{ $contactUKTitle := get "contact.uk.title" .Data }}
+{{ $contactUKName := get "contact.uk.name" .Data }}
+{{ $contactUKAddress := get "contact.uk.address" .Data }}
+{{ $contactUKPhone := get "contact.uk.phone" .Data }}
+{{ $contactUKMobile := get "contact.uk.mobile" .Data }}
+{{ $contactUKEmail := get "contact.uk.email" .Data }}
+{{ $contactIntroTitle := get "contact.intro.title" .Data }}
+{{ $contactIntroCopy := get "contact.intro.copy" .Data }}
+
+<div class="row-fluid">
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240">
+                <li><a href="#germany">{{ index $contactGermanyTitle 1 }}</a></li>
+                <li><a href="#uk">{{ index $contactUKTitle 1 }}</a></li>
+                <li><a class="top" href="#">Top</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="span10 content">
+        <div id="intro">
+            <section class="page-header">
+                <h1>{{ index $contactTitle 1 }}</h1>
+                <p class="lead">{{ index $contactSubtitle 1 }}</p>
+            </section>
+
+            <section>
+                <div class="page-header">
+                    <h2>{{ index $contactIntroTitle 1 }}</h2>
+                </div>
+                {{ range $index, $copy := $contactIntroCopy }}
+                    {{ if and $index $copy }}
+                    <p>{{ $copy }}</p>
+                    {{end}}
+                {{ end }}
+            </section>
+        </div>
+        <div class="row-fluid">
+
+            <section id="germany" class="span6">
+                <div class="page-header">
+                    <h2>{{ index $contactGermanyTitle 1 }}</h2>
+                </div>
+                <address>
+                {{ range $index, $copy := $contactGermanyName }}
+                    {{ if and $index $copy }}
+                    <strong>{{ $copy }}</strong><br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactGermanyAddress }}
+                    {{ if and $index $copy }}
+                        {{ $copy }}<br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactGermanyPhone }}
+                    {{ if and $index $copy }}
+                        <abbr title="Phone">P:</abbr> <a href="tel:{{ $copy }}">{{ $copy }}</a><br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactGermanyFax }}
+                    {{ if and $index $copy }}
+                        <abbr title="Fax">F:</abbr> {{ $copy }}<br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactGermanyEmail }}
+                    {{ if and $index $copy }}
+                        <abbr title="Email">E:</abbr> <a href="mailto:{{ $copy }}">{{ $copy }}</a><br/>
+                    {{end}}
+                {{ end }}
+                </address>
+            </section>
+            <section id="uk" class="span6">
+                <div class="page-header">
+                    <h2>{{ index $contactUKTitle 1 }}</h2>
+                </div>
+                <address>
+                {{ range $index, $copy := $contactUKName }}
+                    {{ if and $index $copy }}
+                    <strong>{{ $copy }}</strong><br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactUKAddress }}
+                    {{ if and $index $copy }}
+                        {{ $copy }}<br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactUKPhone }}
+                    {{ if and $index $copy }}
+                        <abbr title="Phone">P:</abbr> <a href="tel:{{ $copy }}">{{ $copy }}</a><br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactUKMobile }}
+                    {{ if and $index $copy }}
+                        <abbr title="Mobile">M:</abbr>  <a href="tel:{{ $copy }}">{{ $copy }}</a><br/>
+                    {{end}}
+                {{ end }}
+                {{ range $index, $copy := $contactUKEmail }}
+                    {{ if and $index $copy }}
+                        <abbr title="Email">E:</abbr> <a href="mailto:{{ $copy }}">{{ $copy }}</a><br/>
+                    {{end}}
+                {{ end }}
+                </address>
+            </section>
+        </div>
+    </div>
+</div>
