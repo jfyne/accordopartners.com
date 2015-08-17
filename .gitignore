@@ -6,5 +6,4 @@ tmp
 dist
 *.un~
 node_modules
-public/bundle.js
-public/bundle.min.js
+public

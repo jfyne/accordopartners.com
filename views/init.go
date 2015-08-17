@@ -22,6 +22,7 @@ func Get(key string, data [][]string) []string {
 
 func init() {
 	re = render.New(render.Options{
+		Directory:     "front/templates",
 		Layout:        "layout",
 		Extensions:    []string{".html"},
 		IsDevelopment: true,
