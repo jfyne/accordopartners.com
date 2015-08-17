@@ -13,6 +13,7 @@ func main() {
 	router.HandleFunc("/about", views.About)
 	router.HandleFunc("/contact", views.Contact)
 	router.HandleFunc("/experience", views.Experience)
+	router.HandleFunc("/partners", views.Partners)
 	router.HandleFunc("/solutions", views.Solutions)
 	router.HandleFunc("/terms", views.Terms)
 

@@ -65,3 +65,11 @@ func Solutions(w http.ResponseWriter, r *http.Request) {
 func Terms(w http.ResponseWriter, r *http.Request) {
 	common(w, "terms")
 }
+
+func Partners(w http.ResponseWriter, r *http.Request) {
+	partners, _ := back.Partners()
+	context := map[string]interface{}{
+		"Partners": partners,
+	}
+	re.HTML(w, http.StatusOK, "partners", context)
+}
