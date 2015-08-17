@@ -22,13 +22,13 @@ header {
             float: left;
             margin-bottom:20px;
             a {
-                background-color: @primary;
+                background-color: $primary;
                 padding:10px;
-                color: @light;
+                color: $light;
                 text-transform: uppercase;
                 &:hover {
-                    background-color: @secondary;
-                    color: @light;
+                    background-color: $secondary;
+                    color: $light;
                 }
             }
         }

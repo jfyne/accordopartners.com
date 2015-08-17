@@ -12,9 +12,10 @@ footer {
 
         a {
             text-transform: uppercase;
-            background-color: @tertiary;
-            color: @light;
+            background-color: $tertiary;
+            color: $light;
             padding: 10px;
         }
     }
 }
+

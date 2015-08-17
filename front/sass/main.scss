@@ -4,13 +4,13 @@
  * @author Josh Fyne
  */
 
-@import "_variables.less";
-@import "_header.less";
-@import "_side.less";
-@import "_index.less";
-@import "_events.less";
-@import "_partners.less";
-@import "_footer.less";
+@import "variables";
+@import "header";
+@import "side";
+@import "index";
+@import "events";
+@import "partners";
+@import "footer";
 
 html {
     height: 100%;
@@ -19,7 +19,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: @primary;
+    color: $primary;
     background-image: url('/assets/img/corner.png');
     background-repeat: no-repeat;
     background-position: right top;
@@ -30,7 +30,7 @@ body {
 @media only screen and (max-width: 768px) {
     body {
         font-family: 'Roboto', sans-serif;
-        color: @primary;
+        color: $primary;
         background-image: none;
     }
 }
@@ -48,18 +48,18 @@ h1,h2,h3 {
     font-family: 'Exo', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    color: @tertiary;
+    color: $tertiary;
 }
 
 a {
-    color: @secondary;
+    color: $secondary;
     text-decoration: none;
 }
 
 section, .card {
     position: relative;
     padding:20px;
-    background: @light;
+    background: $light;
     border-left: 1px solid #eee;
     border-top: 1px solid #eee;
     border-right: 1px solid #ccc;
@@ -68,14 +68,14 @@ section, .card {
 }
 
 .btn {
-    background-color: @tertiary;
+    background-color: $tertiary;
     padding:10px;
     margin: 5px;
-    color: @light;
+    color: $light;
     text-transform: uppercase;
     &:hover {
-        background-color: @secondary;
-        color: @light;
+        background-color: $secondary;
+        color: $light;
     }
 }
 

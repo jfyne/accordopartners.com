@@ -1,1 +1,1 @@
-document.write('It works');
+require('./sass/main.scss')
