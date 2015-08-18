@@ -2,6 +2,7 @@ module.exports = {
     entry: "./front/entry.js",
     output: {
         path: __dirname+"/public",
+        publicPath: "/",
         filename: "bundle.min.js"
     },
     module: {

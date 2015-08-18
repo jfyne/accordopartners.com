@@ -1,6 +1,7 @@
 package views
 
 import (
+	"github.com/gorilla/mux"
 	"github.com/jfyne/accordopartners.com/back"
 	"github.com/unrolled/render"
 	"html/template"
@@ -72,4 +73,19 @@ func Partners(w http.ResponseWriter, r *http.Request) {
 		"Partners": partners,
 	}
 	re.HTML(w, http.StatusOK, "partners", context)
+}
+
+func Expos(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	tag := vars["tag"]
+
+	categories, _ := back.AllCategories()
+	expos, _ := back.Expos(tag)
+
+	context := map[string]interface{}{
+		"Category":   tag,
+		"Categories": categories,
+		"Expos":      expos,
+	}
+	re.HTML(w, http.StatusOK, "expos", context)
 }

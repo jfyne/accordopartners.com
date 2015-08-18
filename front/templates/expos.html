@@ -1,10 +1,11 @@
 <div class="row-fluid">
-
     <div class="span2">
         <nav class="side">
             <ul data-spy="affix" data-offset-top="240">
                 <li><a href="/expos/upcoming">All upcoming</a></li>
-                <li><a href="/expos/category">Fix this</a></li>
+                {{ range $index, $category := .Categories }}
+                <li><a href="/expos/{{ index $category 1 }}">{{ index $category 0 }}</a></li>
+                {{ end }}
             </ul>
         </nav>
     </div>
@@ -12,25 +13,20 @@
     <div class="span10 content">
         <section class="page-header">
             <h1>Expos & conferences</h1>
-        </section>
-
-        <section>
-            <div class="page-header">
-                <h2>@tag</h2>
-            </div>
+            <p>{{ .Category }}</p>
         </section>
 
         <div id="expos">
             <ul>
-            @filteredExpos.map { expo =>
+                {{ range $index, $expo := .Expos }}
                 <li>
                     <address class="card">
-                        <strong><a href="@expo.link" target="_blank">@expo.name</a></strong><br/>
-                        @Expos.humanize(expo.date)<br/>
-                        @expo.categoryName
+                        <strong><a href="{{ index $expo 2 }}" target="_blank">{{ index $expo 0 }}</a></strong><br/>
+                        {{ index $expo 1 }}<br/>
+                        {{ index $expo 3 }}
                     </address>
                 </li>
-            }
+                {{ end }}
             </ul>
         </div>
     </div>

@@ -31,7 +31,7 @@ func readCSVFromUrl(url string) ([][]string, error) {
 		return nil, err
 	}
 
-	go c.Set(url, data, cache.DefaultExpiration)
+	c.Set(url, data, cache.DefaultExpiration)
 
 	return data, nil
 }
