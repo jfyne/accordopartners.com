@@ -1,0 +1,42 @@
+<div class="row-fluid">
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240">
+            {{ range $index, $partner := .Partners }}
+                {{ if $index }}
+                <li><a href="#partner-{{ index $partner 0 }}">{{ index $partner 0 }}</a></li>
+                {{ end }}
+            {{ end }}
+                <li><a class="top" href="#">Top</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="span10 content">
+        <div id="intro">
+            <section class="page-header">
+                <h1>Partners</h1>
+            </section>
+        </div>
+        <div id="partners">
+            <ul>
+            {{ range $index, $partner := .Partners }}
+                {{ if $index }}
+                <li id="partner-@partner.name">
+                    <div class="card">
+                        <h2>{{ index $partner 0 }}</h2>
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <a target="_blank" href="{{ index $partner 1 }}"><img src="{{ index $partner 2 }}"></a>
+                            </div>
+                            <div class="span10">
+                                <p>{{ index $partner 3 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+            {{end}}
+            </ul>
+        </div>
+    </div>
+</div>

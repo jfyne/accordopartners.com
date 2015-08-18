@@ -1,0 +1,209 @@
+{{ $solutionsTitle := get "solutions.title" .Data }}
+{{ $solutionsSubtitle := get "solutions.subtitle" .Data }}
+{{ $solutionsProgramsTitle := get "solutions.programs.title" .Data }}
+{{ $solutionsProgramsCopy := get "solutions.programs.copy" .Data }}
+{{ $solutionsProgramsList := get "solutions.programs.list" .Data }}
+{{ $solutionsEngangementTitle := get "solutions.engagement.title" .Data }}
+{{ $solutionsEngangementCopy := get "solutions.engagement.copy" .Data }}
+{{ $solutionsEngangementList := get "solutions.engagement.list" .Data }}
+{{ $solutionsEngangementEpilogue := get "solutions.engagement.epilogue" .Data }}
+{{ $solutionsMarketTitle := get "solutions.market.title" .Data }}
+{{ $solutionsMarketCopy := get "solutions.market.copy" .Data }}
+{{ $solutionsMarketList := get "solutions.market.list" .Data }}
+{{ $solutionsInnovationTitle := get "solutions.innovation.title" .Data }}
+{{ $solutionsInnovationCopy := get "solutions.innovation.copy" .Data }}
+{{ $solutionsInnovationList := get "solutions.innovation.list" .Data }}
+{{ $solutionsFDITitle := get "solutions.fdi.title" .Data }}
+{{ $solutionsFDICopy := get "solutions.fdi.copy" .Data }}
+{{ $solutionsFDIRecipientsCopy := get "solutions.fdi.recipients.copy" .Data }}
+{{ $solutionsFDIRecipientsList := get "solutions.fdi.recipients.list" .Data }}
+{{ $solutionsFDIServicesCopy := get "solutions.fdi.services.copy" .Data }}
+{{ $solutionsFDIServicesList := get "solutions.fdi.services.list" .Data }}
+{{ $solutionsOffsetTitle := get "solutions.offset.title" .Data }}
+{{ $solutionsOffsetCopy := get "solutions.offset.copy" .Data }}
+{{ $solutionsOffsetList := get "solutions.offset.list" .Data }}
+{{ $solutionsFinanceTitle := get "solutions.finance.title" .Data }}
+{{ $solutionsFinanceCopy := get "solutions.finance.copy" .Data }}
+{{ $solutionsFinanceList := get "solutions.finance.list" .Data }}
+<div class="row-fluid">
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240">
+                <li><a href="#programs">{{ index $solutionsProgramsTitle 1 }}</a></li>
+                <li><a href="#market-engagement">{{ index $solutionsEngangementTitle 1 }}</a></li>
+                <li><a href="#market-entry">{{ index $solutionsMarketTitle 1 }}</a></li>
+                <li><a href="#innovation-partnering">{{ index $solutionsInnovationTitle 1 }}</a></li>
+                <li><a href="#fdi">{{ index $solutionsFDITitle 1 }}</a></li>
+                <li><a href="#offset">{{ index $solutionsOffsetTitle 1 }}</a></li>
+                <li><a href="#finance">{{ index $solutionsFinanceTitle 1 }}</a></li>
+                <li><a class="top" href="#">Top</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="span10 content">
+        <section class="page-header">
+            <h1>{{ index $solutionsTitle 1 }}</h1>
+            <p class="lead">{{ index $solutionsSubtitle 1 }}</p>
+        </section>
+
+        <section id="programs">
+            <div class="page-header">
+                <h2>{{ index $solutionsProgramsTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsProgramsCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsProgramsList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="market-engagement">
+            <div class="page-header">
+                <h2>{{ index $solutionsEngangementTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsEngangementCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsEngangementList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+
+            {{ range $index, $copy := $solutionsEngangementEpilogue }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+        </section>
+
+        <section id="market-entry">
+            <div class="page-header">
+                <h2>{{ index $solutionsMarketTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsMarketCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsMarketList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="innovation-partnering">
+            <div class="page-header">
+                <h2>{{ index $solutionsInnovationTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsInnovationCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsInnovationList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="fdi">
+            <div class="page-header">
+                <h2>{{ index $solutionsFDITitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsFDICopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            {{ range $index, $copy := $solutionsFDIRecipientsCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsFDIRecipientsList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+
+            {{ range $index, $copy := $solutionsFDIServicesCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsFDIServicesList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="offset">
+            <div class="page-header">
+                <h2>{{ index $solutionsOffsetTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsOffsetCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsOffsetList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="finance">
+            <div class="page-header">
+                <h2>{{ index $solutionsFinanceTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $solutionsFinanceCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                {{ range $index, $copy := $solutionsFinanceList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+    </div>
+</div>

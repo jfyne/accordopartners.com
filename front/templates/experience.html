@@ -1,0 +1,70 @@
+{{ $experienceTitle := get "experience.title" .Data }}
+{{ $experienceSubtitle := get "experience.subtitle" .Data }}
+{{ $experienceBusinessTitle := get "experience.business.title" .Data }}
+{{ $experienceBusinessCopy := get "experience.business.copy" .Data }}
+{{ $experienceSectorsTitle := get "experience.sectors.title" .Data }}
+{{ $experienceSectorsCopy := get "experience.sectors.copy" .Data }}
+{{ $experienceSectorsList := get "experience.sectors.list" .Data }}
+{{ $experienceExposTitle := get "experience.expos.title" .Data }}
+{{ $experienceExposCopy := get "experience.expos.copy" .Data }}
+<div class="row-fluid">
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240">
+                <li><a href="#business">{{ index $experienceBusinessTitle 1 }}</a></li>
+                <li><a href="#technology">{{ index $experienceSectorsTitle 1 }}</a></li>
+                <li><a href="#conferences">{{ index $experienceExposTitle 1 }}</a></li>
+                <li><a class="top" href="#">Top</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="span10 content">
+        <section class="page-header">
+            <h1>{{ index $experienceTitle 1 }}</h1>
+            <p class="lead">{{ index $experienceSubtitle 1 }}</p>
+        </section>
+
+        <section id="business">
+            <div class="page-header">
+                <h2>{{ index $experienceBusinessTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $experienceBusinessCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+        </section>
+        <section id="technology">
+            <div class="page-header">
+                <h2>{{ index $experienceSectorsTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $experienceSectorsCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+            <ul>
+                {{ range $index, $copy := $experienceSectorsList }}
+                    {{ if and $index $copy }}
+                    <li>{{ $copy }}</li>
+                    {{end}}
+                {{ end }}
+            </ul>
+        </section>
+        <section id="conferences">
+            <div class="page-header">
+                <h2>{{ index $experienceExposTitle 1 }}</h2>
+            </div>
+            {{ range $index, $copy := $experienceExposCopy }}
+                {{ if and $index $copy }}
+                <p>{{ $copy }}</p>
+                {{end}}
+            {{ end }}
+
+            <ul>
+                <li><a href="/expos/upcoming">All upcoming</a></li>
+                <li><a href="/expos/categories">loopthroughhere</a></li>
+            </ul>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row-fluid">
+    <div class="span2">
+        <nav class="side">
+            <ul data-spy="affix" data-offset-top="240">
+                <li><a href="/expos/upcoming">All upcoming</a></li>
+                {{ range $index, $category := .Categories }}
+                <li><a href="/expos/{{ index $category 1 }}">{{ index $category 0 }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+
+    <div class="span10 content">
+        <section class="page-header">
+            <h1>Expos & conferences</h1>
+            <p>{{ .Category }}</p>
+        </section>
+
+        <div id="expos">
+            <ul>
+                {{ range $index, $expo := .Expos }}
+                <li>
+                    <address class="card">
+                        <strong><a href="{{ index $expo 2 }}" target="_blank">{{ index $expo 0 }}</a></strong><br/>
+                        {{ index $expo 1 }}<br/>
+                        {{ index $expo 3 }}
+                    </address>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</div>

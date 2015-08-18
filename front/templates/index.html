@@ -1,0 +1,84 @@
+{{ $homeTitle := get "home.title" .Data }}
+{{ $homeSubtitle := get "home.subtitle" .Data }}
+{{ $homeLeftTitle := get "home.left.title" .Data }}
+{{ $homeLeftCopy := get "home.left.copy" .Data }}
+{{ $homeRightMeetTitle := get "home.right.meet.title" .Data }}
+{{ $homeRightMeetCopy := get "home.right.meet.copy" .Data }}
+{{ $homeRightContactTitle := get "home.right.contact.title" .Data }}
+{{ $homeRightContactCopy := get "home.right.contact.copy" .Data }}
+{{ $homeStrapline := get "home.strapline" .Data }}
+<div class="row-fluid">
+    <section class="page-header span12">
+        <h1>{{ index $homeTitle 1 }}</h1>
+        <p class="lead">{{ index $homeSubtitle 1 }}</p>
+    </section>
+</div>
+
+<div class="row-fluid content">
+    <section class="span6">
+        {{ range $index, $copy := $homeLeftTitle }}
+            {{ if $index }}
+            <h2>{{ $copy }}</h2>
+            {{end}}
+        {{ end }}
+
+        {{ range $index, $copy := $homeLeftCopy }}
+            {{ if $index }}
+            <p class="lead">{{ $copy }}</p>
+            {{end}}
+        {{ end }}
+
+        <div class="cta">
+            <a href="/about" class="btn btn-large btn-primary">More</a>
+        </div>
+    </section>
+
+    <section class="span6">
+        {{ range $index, $copy := $homeRightMeetTitle }}
+            {{ if $index }}
+            <h2>{{ $copy }}</h2>
+            {{end}}
+        {{ end }}
+
+        {{ range $index, $copy := $homeRightMeetCopy }}
+            {{ if $index }}
+            <p class="lead">{{ $copy }}</p>
+            {{end}}
+        {{ end }}
+
+        <div class="cta">
+            <a href="/expos/upcoming" class="btn btn-large btn-primary">Expos &amp; Conferences</a>
+        </div>
+    </section>
+
+    <section class="span6">
+        {{ range $index, $copy := $homeRightContactTitle }}
+            {{ if $index }}
+            <h2>{{ $copy }}</h2>
+            {{end}}
+        {{ end }}
+
+
+        {{ range $index, $copy := $homeRightContactCopy }}
+            {{ if $index }}
+            <p class="lead">{{ $copy }}</p>
+            {{end}}
+        {{ end }}
+
+        <div class="cta">
+            <a href="/contact" class="btn btn-large btn-primary">Contact us</a>
+        </div>
+    </section>
+</div>
+
+<div class="row-fluid">
+    <section class="span12">
+        <blockquote>
+            {{ range $index, $copy := $homeStrapline }}
+                {{ if $index }}
+                <p><em>{{ $copy }}</em></p>
+                {{end}}
+            {{ end }}
+        </blockquote>
+    </section>
+</div>

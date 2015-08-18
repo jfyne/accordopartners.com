@@ -1,0 +1,13 @@
+{{ $termsTitle := get "terms.title" .Data }}
+{{ $termsCopy := get "terms.copy" .Data }}
+<div class="row-fluid">
+    <section class="span12">
+        <h1>{{ index $termsTitle 1 }}</h2>
+
+        {{ range $index, $copy := $termsCopy }}
+            {{ if and $index $copy }}
+            <p>{{ $copy }}</p>
+            {{end}}
+        {{ end }}
+    </section>
+</div>
