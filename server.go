@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 	"github.com/jfyne/accordopartners.com/views"
+	"github.com/urfave/negroni"
 )
 
 func main() {

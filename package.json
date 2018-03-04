@@ -4,7 +4,8 @@
   "description": "Accordo Partners ================",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "node-sass": "^3.2.0",
     "sass-loader": "^2.0.1",
     "style-loader": "^0.12.3",
-    "url-loader": "^0.5.6"
+    "url-loader": "^0.5.6",
+    "webpack": "^2.2.0",
+    "webpack-cli": "^2.0.10"
   }
 }
