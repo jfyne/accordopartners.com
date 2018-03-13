@@ -1,11 +1,12 @@
 package views
 
 import (
+	"html/template"
+	"net/http"
+
 	"github.com/gorilla/mux"
 	"github.com/jfyne/accordopartners.com/back"
 	"github.com/unrolled/render"
-	"html/template"
-	"net/http"
 )
 
 var re *render.Render
@@ -56,7 +57,13 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 }
 
 func Experience(w http.ResponseWriter, r *http.Request) {
-	common(w, "experience")
+	data, _ := back.SiteCopy()
+	categories, _ := back.AllCategories()
+	context := map[string]interface{}{
+		"Data":       data,
+		"Categories": categories,
+	}
+	re.HTML(w, http.StatusOK, "experience", context)
 }
 
 func Solutions(w http.ResponseWriter, r *http.Request) {

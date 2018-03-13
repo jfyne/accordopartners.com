@@ -63,7 +63,9 @@
 
             <ul>
                 <li><a href="/expos/upcoming">All upcoming</a></li>
-                <li><a href="/expos/categories">loopthroughhere</a></li>
+                {{ range $index, $category := .Categories }}
+                <li><a href="/expos/{{ index $category 1 }}">{{ index $category 0 }}</a></li>
+                {{ end }}
             </ul>
         </section>
     </div>
