@@ -20,7 +20,7 @@ metadata:
   labels:
     app: accordopartners
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: accordopartners
@@ -35,3 +35,9 @@ spec:
           ports:
             - containerPort: 3000
               name: accordopartners
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 3
