@@ -1,4 +1,4 @@
-from golang as backend
+from golang:1.12 as backend
 
 RUN curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.3.2/dep-linux-amd64 && \
     chmod +x /usr/local/bin/dep
@@ -15,7 +15,7 @@ COPY server.go ./server.go
 
 RUN CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o accordo .
 
-from node as frontend
+from node:6 as frontend
 
 WORKDIR /build
 
