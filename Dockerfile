@@ -1,21 +1,15 @@
-from golang:1.12 as backend
-
-RUN curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.3.2/dep-linux-amd64 && \
-    chmod +x /usr/local/bin/dep
+from golang as backend
 
 WORKDIR /go/src/github.com/jfyne/accordopartners.com
 
-COPY Gopkg.lock Gopkg.toml ./
-
-RUN dep ensure -vendor-only
-
+COPY go.mod go.sum ./
 COPY ./back ./back
 COPY ./views ./views
 COPY server.go ./server.go
 
 RUN CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o accordo .
 
-from node:6 as frontend
+from node as frontend
 
 WORKDIR /build
 

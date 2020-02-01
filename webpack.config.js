@@ -1,19 +1,37 @@
 module.exports = {
-  entry: './front/entry.js',
+  mode: "production",
+  entry: "./front/entry.js",
   output: {
-    path: __dirname + '/public',
-    publicPath: '/',
-    filename: 'bundle.min.js',
+    path: __dirname + "/public",
+    publicPath: "/",
+    filename: "bundle.min.js"
   },
   module: {
-    loaders: [
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
+    rules: [
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: { limit: 8192 }
+          }
+        ]
+      },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
       {
         test: /\.scss$/,
-        loader:
-          'style-loader!css-loader!autoprefixer-loader?browsers=last 2 versions!sass-loader',
-      },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
-    ],
-  },
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          }
+        ]
+      }
+    ]
+  }
 };

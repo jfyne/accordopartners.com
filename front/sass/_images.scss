@@ -1,36 +1,36 @@
 #logo {
-    display: inline-block;
-    background-image: url('../img/accordo_main-dark.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 65%;
-    height: 8rem;
+  display: inline-block;
+  background-image: url("../img/accordo_main-dark.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 65%;
+  height: 8rem;
 
-    @media only screen and (max-width: 768px) {
-        width: 100%;
-        height: 5rem;
-    }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 5rem;
+  }
 }
 
 .portrait {
-    display: inline-block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    margin-left: 1rem;
-    margin-top: 1rem;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-top: 1rem;
 
-    @media only screen and (max-width: 768px) {
-        margin: 0;
-    }
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+  }
 
-    &#rolf {
-        background-image: url('../img/Rolf-Fyne.jpg');
-    }
+  &#rolf {
+    background-image: url("../img/Rolf-Fyne.jpg");
+  }
 
-    &#reiner {
-        background-image: url('../img/Reiner-Giersch.jpg');
-    }
+  &#reiner {
+    background-image: url("../img/Reiner-Giersch.jpg");
+  }
 }

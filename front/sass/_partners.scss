@@ -3,18 +3,15 @@
  *
  */
 #partners {
+  ul {
+    list-style: none;
+    padding: 0;
 
-    ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-
-            box-sizing: border-box;
-            img {
-                max-height: 120px;
-            }
-        }
+    li {
+      box-sizing: border-box;
+      img {
+        max-height: 120px;
+      }
     }
+  }
 }
-

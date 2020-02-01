@@ -3,60 +3,60 @@
  *
  */
 header {
-    display: block;
-    padding-left: 20px;
-    position: relative;
-    clear: both;
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  clear: both;
 
-    div {
-        img {
-            margin-left: -54px;
-            max-height: 200px;
+  div {
+    img {
+      margin-left: -54px;
+      max-height: 200px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      float: left;
+      margin-bottom: 20px;
+      a {
+        background-color: $primary;
+        padding: 10px;
+        color: $light;
+        text-transform: uppercase;
+        &:hover {
+          background-color: $secondary;
+          color: $light;
         }
+      }
+    }
+    &.affix {
+      position: fixed;
+      top: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    div {
+      width: 100%;
+
+      img {
+        margin-left: 0;
+        width: 100%;
+      }
     }
 
     ul {
-        list-style: none;
-        padding: 0;
-        li {
-            float: left;
-            margin-bottom:20px;
-            a {
-                background-color: $primary;
-                padding:10px;
-                color: $light;
-                text-transform: uppercase;
-                &:hover {
-                    background-color: $secondary;
-                    color: $light;
-                }
-            }
-        }
-        &.affix {
-            position: fixed;
-            top: 5px;
-        }
+      width: 100%;
+      position: relative;
     }
-
-    @media only screen and (max-width: 768px) {
-        div {
-            width: 100%;
-
-            img {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-
-        ul {
-            width:100%;
-            position: relative;
-        }
-    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    header {
-        padding-left: 0;
-    }
+  header {
+    padding-left: 0;
+  }
 }

@@ -3,29 +3,29 @@
  *
  */
 #expos {
+  padding: 0;
+  margin: 0;
+  ul {
+    list-style: none;
     padding: 0;
-    margin: 0;
-    ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        li {
-            margin: 0 .5rem;
-        }
-
-        @media only screen and (max-width: 768px) {
-            display: block;
-            li {
-                margin: 0;
-            }
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      margin: 0 0.5rem;
     }
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+      li {
+        margin: 0;
+      }
+    }
+  }
 }
 
 #sectors {
-    margin: 0;
-    padding: 0;
-    clear: both;
+  margin: 0;
+  padding: 0;
+  clear: both;
 }

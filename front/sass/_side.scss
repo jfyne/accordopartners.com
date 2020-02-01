@@ -3,56 +3,55 @@
  *
  */
 nav.side {
-    ul {
-        font-size: 14px;
-        list-style: none;
-        padding: 0;
-        li {
-            margin-top: 20px;
-            a {
-                text-transform: uppercase;
-                &.top {
-                    background-color: $tertiary;
-                    color: $light;
-                    padding: 10px;
-                }
-            }
+  ul {
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    li {
+      margin-top: 20px;
+      a {
+        text-transform: uppercase;
+        &.top {
+          background-color: $tertiary;
+          color: $light;
+          padding: 10px;
         }
-
-        @media only screen and (max-width: 768px) {
-            li {
-                float: left;
-                margin-top: 0;
-                white-space: nowrap;
-                margin-bottom: 20px;
-                a {
-                    padding: 10px;
-                    background: $tertiary;
-                    color: $light;
-                    &:hover {
-                        background: $secondary;
-                    }
-                }
-            }
-        }
-        &.affix {
-            position: fixed;
-            top: 5px;
-            width: 12%;
-        }
+      }
     }
+
+    @media only screen and (max-width: 768px) {
+      li {
+        float: left;
+        margin-top: 0;
+        white-space: nowrap;
+        margin-bottom: 20px;
+        a {
+          padding: 10px;
+          background: $tertiary;
+          color: $light;
+          &:hover {
+            background: $secondary;
+          }
+        }
+      }
+    }
+    &.affix {
+      position: fixed;
+      top: 5px;
+      width: 12%;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .content {
-        clear: both;
-    }
+  .content {
+    clear: both;
+  }
 
-    nav.side {
-        ul.affix {
-            position: relative;
-            width: 100%;
-        }
+  nav.side {
+    ul.affix {
+      position: relative;
+      width: 100%;
     }
+  }
 }
-
