@@ -9,12 +9,11 @@ const (
 )
 
 func SiteCopy() ([][]string, error) {
-	if data, err := readCSVFromUrl(SC_URL); err != nil {
+	data, err := readCSVFromUrl(SC_URL)
+	if err != nil {
 		log.Println(err)
 		return nil, err
-	} else {
-		return data, nil
 	}
 
-	return nil, ErrKeyNotFound
+	return data, nil
 }

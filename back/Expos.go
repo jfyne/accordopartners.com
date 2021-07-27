@@ -55,7 +55,6 @@ func currentExpos() ([][]string, error) {
 	}
 
 	return expos, nil
-	return data, nil
 }
 
 func AllCategories() ([][]string, error) {

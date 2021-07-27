@@ -9,12 +9,10 @@ const (
 )
 
 func Partners() ([][]string, error) {
-	if data, err := readCSVFromUrl(P_URL); err != nil {
+	data, err := readCSVFromUrl(P_URL)
+	if err != nil {
 		log.Println(err)
 		return nil, err
-	} else {
-		return data, nil
 	}
-
-	return nil, ErrKeyNotFound
+	return data, nil
 }

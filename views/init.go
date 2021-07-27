@@ -29,7 +29,7 @@ func init() {
 		Extensions:    []string{".html"},
 		IsDevelopment: true,
 		Funcs: []template.FuncMap{
-			template.FuncMap{
+			{
 				"get": Get,
 			},
 		},

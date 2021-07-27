@@ -3,14 +3,15 @@ package back
 import (
 	"encoding/csv"
 	"errors"
-	"github.com/pmylund/go-cache"
 	"net/http"
 	"time"
+
+	"github.com/pmylund/go-cache"
 )
 
 var (
 	c              = cache.New(1*time.Hour, 10*time.Minute)
-	ErrKeyNotFound = errors.New("Data key not found in output")
+	ErrKeyNotFound = errors.New("data key not found in output")
 )
 
 func readCSVFromUrl(url string) ([][]string, error) {
