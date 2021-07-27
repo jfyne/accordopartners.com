@@ -49,9 +49,9 @@ h1,
 h2,
 h3 {
   font-family: "Exo", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
-  color: $tertiary;
+  color: $secondary;
 }
 
 a {
@@ -81,6 +81,7 @@ section,
 
 .btn {
   background-color: $tertiary;
+  border: none;
   padding: 10px;
   margin: 5px;
   color: $light;
@@ -89,6 +90,18 @@ section,
     background-color: $secondary;
     color: $light;
   }
+}
+
+form {
+    .form-control {
+        display: block;
+        padding: .5rem;
+        margin-top: 1rem;
+    }
+    button.btn {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
 }
 
 #content {

@@ -3,6 +3,7 @@ module github.com/jfyne/accordopartners.com
 go 1.13
 
 require (
+	cloud.google.com/go/datastore v1.5.0
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/gorilla/context v0.0.0-20160226214623-1ea25387ff6f // indirect
 	github.com/gorilla/mux v1.6.1

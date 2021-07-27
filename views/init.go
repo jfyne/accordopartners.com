@@ -1,15 +1,20 @@
 package views
 
 import (
+	"context"
 	"html/template"
+	"log"
 	"net/http"
+	"os"
 
+	"cloud.google.com/go/datastore"
 	"github.com/gorilla/mux"
 	"github.com/jfyne/accordopartners.com/back"
 	"github.com/unrolled/render"
 )
 
 var re *render.Render
+var store *datastore.Client
 
 // Get: Find the correct row in the csv
 func Get(key string, data [][]string) []string {
@@ -34,6 +39,16 @@ func init() {
 			},
 		},
 	})
+
+	if os.Getenv("GOOGLE_APPLICATION_CREDENTIALS") == "" {
+		return
+	}
+
+	client, err := datastore.NewClient(context.Background(), "compliance")
+	if err != nil {
+		log.Fatal(err)
+	}
+	store = client
 }
 
 func common(w http.ResponseWriter, tmpl string) {

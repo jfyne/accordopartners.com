@@ -1,0 +1,28 @@
+<div class="row-fluid">
+    <section class="span12">
+        <h1>Reports</h1>
+
+        {{ if ne (index . "Error") "" }}
+            <p>{{ index . "Error" }}</p>
+            <a href="/reports">Back to report list</a>
+        {{ end }}
+        {{ if not (index . "Download") }}
+        <article>
+            <h3>IYQ Project Implementation Scenario - Investment Perspective Summer 2021</h3>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="email">Enter your email address to download</label>
+                    <input id="email" class="form-control" type="email" name="email" placeholder="Email address" required/>
+                    <input name="report" type="hidden" value="iyq-2021">
+                </div>
+                <button type="submit" class="btn">Download</button>
+            </form>
+        </article>
+        {{ else }}
+        {{ $report := (index . "Report") }}
+        <p>Download your report: </p>
+        <p>{{ $report.Title }} <a class="btn" href="{{ $report.URL }}" target="_blank" download>Download</a></p>
+        <p><a href="/reports">Back to report list</a></p>
+        {{ end }}
+    </section>
+</div>

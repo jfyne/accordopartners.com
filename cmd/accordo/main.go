@@ -17,6 +17,8 @@ func main() {
 	router.HandleFunc("/partners", views.Partners)
 	router.HandleFunc("/solutions", views.Solutions)
 	router.HandleFunc("/terms", views.Terms)
+	router.HandleFunc("/reports", views.Reports).Methods("GET")
+	router.HandleFunc("/reports", views.ReportsSend).Methods("POST")
 
 	n := negroni.Classic()
 	n.UseHandler(router)
