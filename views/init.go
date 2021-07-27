@@ -44,7 +44,7 @@ func init() {
 		return
 	}
 
-	client, err := datastore.NewClient(context.Background(), "compliance")
+	client, err := datastore.NewClient(context.Background(), "compliance-167400")
 	if err != nil {
 		log.Fatal(err)
 	}

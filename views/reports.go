@@ -50,12 +50,12 @@ func ReportsSend(w http.ResponseWriter, r *http.Request) {
 		"Download": false,
 	}
 
-	key := datastore.NameKey("reportDownload", "email", nil)
-
 	rd := &reportDownload{
 		Email:  r.FormValue("email"),
 		Report: r.FormValue("report"),
 	}
+
+	key := datastore.NameKey("reportDownload", rd.Email, nil)
 	report := getReport(rd.Report)
 	context["Download"] = true
 	context["Report"] = report
@@ -68,6 +68,7 @@ func ReportsSend(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		context["Error"] = "Something went wrong, please try again"
 		re.HTML(w, http.StatusInternalServerError, "reports", context)
+		return
 	}
 
 	re.HTML(w, http.StatusOK, "reports", context)
