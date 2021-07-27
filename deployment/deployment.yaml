@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordopartners
+  labels:
+    app: accordopartners
+spec:
+  selector:
+    matchLabels:
+      app: accordopartners
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: accordopartners
+    spec:
+      volumes:
+        - name: google-application-credentials-volume
+          secret:
+            secretName: google-application-credentials
+            items:
+              - key: sa.json
+                path: sa.json
+      containers:
+        - name: accordopartners
+          image: gcr.io/compliance-167400/accordopartners
+          ports:
+            - name: accordopartners
+              containerPort: 3000
+              protocol: TCP
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /etc/gcp/sa.json
+          volumeMounts:
+            - name: google-application-credentials-volume
+              mountPath: /etc/gcp
+              readOnly: true
