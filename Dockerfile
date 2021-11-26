@@ -9,7 +9,7 @@ COPY ./cmd ./cmd
 
 RUN go install ./...
 
-from node as frontend
+from node:14 as frontend
 
 WORKDIR /build
 
