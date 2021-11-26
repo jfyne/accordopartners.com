@@ -19,6 +19,9 @@ var store *datastore.Client
 // Get: Find the correct row in the csv
 func Get(key string, data [][]string) []string {
 	for i := range data {
+		if len(data[i]) == 0 {
+			continue
+		}
 		if data[i][0] == key {
 			return data[i]
 		}
