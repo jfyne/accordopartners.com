@@ -26,7 +26,6 @@ RUN apk add --no-cache ca-certificates tzdata
 
 WORKDIR /root/app/
 
-#COPY --from=backend /go/src/github.com/jfyne/accordopartners.com/accordo .
 COPY --from=backend /go/bin/accordo .
 COPY --from=frontend /build/public ./public
 COPY ./front ./front
