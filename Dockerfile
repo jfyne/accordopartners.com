@@ -1,4 +1,4 @@
-from golang:1.16-alpine as backend
+from golang:1.20-alpine as backend
 
 WORKDIR /go/src/github.com/jfyne/accordopartners.com
 
